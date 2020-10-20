@@ -29,9 +29,9 @@ Future<Response> delete(url,{Map<String, String> headers}) async {
   );
 }
 // request post
-Future<Response> post(url, {Map<String, String> headers, Object body}) async {
+Future<Response> post(url, {Map<String, String> headers, Object body, bool encode = true}) async {
   return await http.post(url,
       headers: headers ?? {},
-      body: json.encode(body)
+      body: encode ? json.encode(body) : body
   );
 }
