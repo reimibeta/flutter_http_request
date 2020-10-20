@@ -12,6 +12,13 @@ class HttpHeader with HttpHeaderBase {
   }
 
   @override
+  Map<String, String> headerFormUrlEncoded() {
+    return {
+      "Content-Type": "application/x-www-form-urlencoded"
+    };
+  }
+
+  @override
   Map<String, String> headerJsonContentWithBearerToken(String token) {
     return  {
       'Content-Type': 'application/json',
